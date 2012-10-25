@@ -1,35 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.google.code</groupId>
-    <artifactId>flot</artifactId>
-    <name>flot</name>
-    <version>0.7</version>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <packaging>jar</packaging>
+    <groupId>org.webjars</groupId>
+    <artifactId>flot</artifactId>
+    <version>0.7-SNAPSHOT</version>
+    <name>flot</name>
+    <description>WebJar for flot</description>
+    <url>http://webjars.org</url>
+
+    <licenses>
+        <license>
+            <name>Copyright (c) 2007-2012 IOLA and Ole Laursen</name>
+            <url>https://github.com/flot/flot/blob/master/LICENSE.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://github.com/webjars/flot</url>
+        <connection>scm:git:https://github.com/webjars/flot.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/flot.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.org</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.jquery</groupId>
+            <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>1.5.1</version>
+            <version>1.8.2</version>
         </dependency>
         <dependency>
-            <groupId>jquery.colorhelpers</groupId>
-            <artifactId>jquery.colorhelpers</artifactId>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-colorhelpers</artifactId>
             <version>1.1</version>
         </dependency>
         <dependency>
-            <groupId>com.google.code</groupId>
+            <groupId>org.webjars</groupId>
             <artifactId>explorercanvas</artifactId>
             <version>r3</version>
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>webjars.github.com</id>
-        <url>file:///${basedir}/../webjars.github.com/m2/</url>
-      </repository>
-    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.2</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
