@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>flot</artifactId>
-    <version>0.8.0-1-SNAPSHOT</version>
+    <version>0.8.0-1</version>
     <name>flot</name>
     <description>WebJar for flot</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/flot</url>
         <connection>scm:git:https://github.com/webjars/flot.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/flot.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>flot-0.8.0-1</tag>
     </scm>
 
     <developers>
