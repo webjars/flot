@@ -3,6 +3,6 @@
 // Ensure any request for this webjar brings in jQuery.
 requirejs.config({
     shim: {
-        flot: [ 'webjars!jquery.js', 'webjars!jquery.colorhelpers.js', 'webjars!explorercanvas.js' ]
+        'jquery.flot': [ 'webjars!jquery.js', 'webjars!jquery.colorhelpers.js', 'webjars!explorercanvas.js' ]
     }
 });
