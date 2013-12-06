@@ -18,7 +18,7 @@
 
     <licenses>
         <license>
-            <name>Copyright (c) 2007-2012 IOLA and Ole Laursen</name>
+            <name>MIT</name>
             <url>https://github.com/flot/flot/blob/master/LICENSE.txt</url>
             <distribution>repo</distribution>
         </license>
