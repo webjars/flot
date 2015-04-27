@@ -28,7 +28,8 @@
                     "jquery.colorhelpers": "jquery.colorhelpers"
                 },
                 "shim": {
-                    "jquery.flot": [ "jquery", "jquery.colorhelpers", "explorercanvas" ]
+                    "jquery.flot": [ "jquery", "jquery.colorhelpers", "explorercanvas" ],
+                    "jquery.colorhelpers": [ "jquery" ]
                 }
             }
         </requirejs>
