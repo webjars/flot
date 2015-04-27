@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>flot</artifactId>
-    <version>0.8.3-1-SNAPSHOT</version>
+    <version>0.8.3-1</version>
     <name>flot</name>
     <description>WebJar for flot</description>
     <url>http://webjars.org</url>
@@ -47,7 +47,7 @@
         <url>http://github.com/webjars/flot</url>
         <connection>scm:git:https://github.com/webjars/flot.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/flot.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>flot-0.8.3-1</tag>
     </scm>
 
     <developers>
@@ -101,17 +101,17 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/flot">
-                                        <exclude name="**/jquery.min.js"/>
-                                        <exclude name="**/jquery.js"/>
-                                        <exclude name="**/*.md"/>
-                                        <exclude name="**/examples/"/>
-                                        <exclude name="**/Makefile"/>
-                                        <exclude name="**/excanvas.*"/>
+                                        <exclude name="**/jquery.min.js" />
+                                        <exclude name="**/jquery.js" />
+                                        <exclude name="**/*.md" />
+                                        <exclude name="**/examples/" />
+                                        <exclude name="**/Makefile" />
+                                        <exclude name="**/excanvas.*" />
                                     </fileset>
                                 </move>
                             </target>
